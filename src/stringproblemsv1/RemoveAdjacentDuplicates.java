@@ -9,7 +9,7 @@ public class RemoveAdjacentDuplicates {
     * https://www.hackerrank.com/challenges/reduced-string/problem
     * */
 
-    static String str = "abba";
+    static String str = "Mississippi";
     static Stack<Character> characters = new Stack<>();
     public static void main(String[] args) {
         System.out.println(removeAdjChars(str));
