@@ -6,26 +6,27 @@ public class RemoveAdjacentDuplicates {
 
     /*
     * 1047. Remove All Adjacent Duplicates In String
+    * https://www.hackerrank.com/challenges/reduced-string/problem
     * */
 
-    static String str = "abbaca";
+    static String str = "abba";
     static Stack<Character> characters = new Stack<>();
     public static void main(String[] args) {
         System.out.println(removeAdjChars(str));
     }
 
     private static String removeAdjChars(String s){
-        for (int i = 0 ; i < str.length(); i++){
-            if(characters.empty() || characters.peek() != str.charAt(i)){
-                characters.push(str.charAt(i));
-            }else{
+        for(int i = 0 ; i < s.length() ; i++){
+            if(characters.empty() || characters.peek() != s.charAt(i)){
+                characters.push(s.charAt(i));
+            }else {
                 characters.pop();
             }
         }
-        StringBuilder result = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         while(!characters.empty()){
-            result.append(characters.pop());
+            sb.append(characters.pop());
         }
-        return result.reverse().toString();
+        return !sb.isEmpty() ? sb.reverse().toString() : "";
     }
 }
